@@ -86,7 +86,7 @@ EOD;
         if (@$_GET['frompage']) {
             $request =& Openid_Utils::load('context');
             $request->accept('frompage', 'string', 'get');
-            $xoopsTpl->assign('frompage', $request->get4show('frompage'));
+            $frompage = $request->get4show('frompage');
         } elseif (is_object($xoopsUser)) {
             $openids = array();
             $identifiers =& $this->_handler->getByUid($xoopsUser->getVar('uid'));
@@ -108,7 +108,17 @@ EOD;
         }
 
         $handler_buttons =& Openid_Utils::load('buttons');
-        $xoopsTpl->assign_by_ref('buttons', $handler_buttons->getObjects());
+        $xoopsTpl->assign('block', array(
+            'buttons'    => $handler_buttons->getObjects(),
+            'allowInput' => $xoopsModuleConfig['show_free_input_box'],
+            'frompage'   => empty($frompage) ? '' : $frompage,
+            'login'      => _LOGIN,
+            'loading'     => _MD_OPENID_MESSAGE_LOADING,
+            'input_id'   => _MD_OPENID_MESSAGE_INPUT_ID
+        ));
+
+        $script = '<script type="text/javascript" src="'.XOOPS_URL.'/modules/openid/resource/openid.js"></script>'."\n";
+        $xoopsTpl->assign('xoops_module_header', $script . $xoopsTpl->get_template_vars('xoops_module_header'));
 
        	header('X-XRDS-Location: ' . $this->_url . '?op=xrds');
 

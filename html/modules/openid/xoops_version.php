@@ -9,7 +9,7 @@
  * @link $URL$
  */
 $modversion['name'] = _MI_OPENID_NAME;
-$modversion['version'] = 0.29;
+$modversion['version'] = 0.3;
 $modversion['description'] = _MI_OPENID_DESC;
 $modversion['credits'] = '"OpenID Auth Module" Development Committee<br />
 Original author Nat Sakimura( http://www.sakimura.org/ )<br />';
@@ -46,7 +46,7 @@ $modversion['blocks'][1] = array(
     'show_func' => 'b_openid_login_show',
     'edit_func' => 'b_openid_login_edit',
     'template'  => 'openidurl.html',
-    'options'   => _MI_OPENID_BLOCK_LABEL . '|1',
+    'options'   => _MI_OPENID_BLOCK_LABEL,
     'visible_any'   => true
 );
 
@@ -69,6 +69,8 @@ $modversion['templates'][2]['file'] = 'openid_new_user.html';
 $modversion['templates'][2]['description'] = 'New OpenID User Dialog';
 $modversion['templates'][3]['file'] = 'openid_admin_default.html';
 $modversion['templates'][3]['description'] = 'Template for admin panel';
+$modversion['templates'][4]['file'] = 'openid_login.html';
+$modversion['templates'][4]['description'] = 'Included template for login';
 
 // Config
 $modversion['hasconfig'] = 1;
@@ -135,6 +137,15 @@ $modversion['config'][] = array(
  'formtype'	=> 'textbox',
  'valuetype'	=> 'string',
  'default'	=> ''
+);
+
+$modversion['config'][] = array(
+ 'name'     => 'show_free_input_box',
+ 'title'    => '_MI_OPENID_SHOW_INPUT',
+ 'description'  => '_MI_OPENID_SHOW_INPUT_DESC',
+ 'formtype' => 'yesno',
+ 'valuetype'    => 'int',
+ 'default'  => 1
 );
 
 $modversion['onUpdate'] = 'include/onupdate.php' ;

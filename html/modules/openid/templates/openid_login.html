@@ -1,0 +1,56 @@
+<style>
+.openid_button {
+ border-style: none;
+ cursor: pointer;
+}
+#openid_identifier {
+ background: #fff url(<{$xoops_url}>/modules/openid/images/login-bg.gif) no-repeat left;
+ color: #000;
+ padding-left: 18px;
+ width: 97%;
+}
+.openid_loader_img {
+ margin-left:auto;
+ margin-right:auto;
+ text-align:center;
+}
+.openid_inline_form {
+ display:inline; 
+}
+</style>
+<div>
+<{if $block.allowInput}>
+<form method="post" action="<{$xoops_url}>/modules/openid/try_auth.php" class="openid_login_form">
+ <input type="text" name="openid_identifier" id="openid_identifier" />
+ <input type="hidden" name="frompage" value="<{$block.frompage}>" />
+ <input type="submit" value="<{$block.login}>" />
+</form>
+<{/if}>
+<{foreach item=button from=$block.buttons}>
+ <{if $button->get('type') == 0}>
+ <form method="post" action="<{$xoops_url}>/modules/openid/try_auth.php" class="openid_login_form openid_inline_form">
+ <input type="hidden" name="openid_identifier" value="<{$button->get4show('identifier')}>"/>
+ <input type="hidden" name="frompage" value="<{$block.frompage}>"/>
+ <input type="image" src="<{$xoops_url}>/modules/openid/images/<{$button->get4show('image')}>" alt="<{$button->get4show('description')}>" title="<{$button->get4show('description')}>" class="openid_button" />
+ </form>
+ <{else}>
+ <img src="<{$xoops_url}>/modules/openid/images/<{$button->get4show('image')}>" alt="<{$button->get4show('description')}>" title="<{$button->get4show('description')}>" class="openid_button openid_show_dialog" base_of_user_identifier="<{$button->get4show('identifier')}>" range="<{$button->get4show('range')}>" style="display:none;"/>
+ <{/if}>
+<{/foreach}>
+<{* Dialog to input ID *}>
+<div id="openid_dialog" style="display:none;">
+<div id="openid_dialog_label"></div>
+<span id="openid_input_id_message" style="display:none;"><{$block.input_id}></span>
+<input type="text" id="openid_dialog_input" value=""/>
+<form id="openid_dialog_form" method="post" action="<{$xoops_url}>/modules/openid/try_auth.php">
+ <input type="hidden" id="openid_dialog_identifier" name="openid_identifier" value=""/>
+ <input type="hidden" name="frompage" value="<{$block.frompage}>"/>
+</form>
+</div>
+<{* loading message dialog *}>
+<div id="openid_loader" style="display:none;">
+<p><{$block.loading}></p>
+<div class="openid_loader_img">
+<img src="<{$xoops_url}>/modules/openid/images/loader.gif" alt=""/>
+</div></div>
+</div>

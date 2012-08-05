@@ -40,4 +40,6 @@ define('_MD_OPENID_ERROR_NICKNAMETAKEN', 'このユーザ名は既に使用されています。')
 define('_MD_OPENID_ERROR_USER_NOT_IDENTIFIED', '指定されたユーザーが特定できません。テーブルに不整合が生じている可能性があります。');
 define('_MD_OPENID_ERROR_REGISTERNG', '申し訳ありません。登録中にエラーが発生しました。エラーが繰り返される場合は管理者に連絡してください。');
 define('_MD_OPENID_ERROR_INCORRECTLOGIN', 'ユーザー名かパスワード（あるいは両方）が間違っています。');
+define('_MD_OPENID_MESSAGE_LOADING', '処理中です。しばらくおまちください。');
+define('_MD_OPENID_MESSAGE_INPUT_ID', '%sのIDを入力してください。');
 ?>
