@@ -40,4 +40,6 @@ define('_MD_OPENID_ERROR_NICKNAMETAKEN', 'Username has been taken.');
 define('_MD_OPENID_ERROR_USER_NOT_IDENTIFIED', 'The selected user is not Identified. User table may be not valid.');
 define('_MD_OPENID_ERROR_REGISTERNG', 'An error occurred while registering the user.');
 define('_MD_OPENID_ERROR_INCORRECTLOGIN', 'Username or password is incorrect');
+define('_MD_OPENID_MESSAGE_LOADING', 'Now loading. Please wait.');
+define('_MD_OPENID_MESSAGE_INPUT_ID', 'Please input %s ID.');
 ?>

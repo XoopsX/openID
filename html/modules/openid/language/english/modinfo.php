@@ -29,4 +29,6 @@ define('_MI_OPENID_CONF_USERS_CHOICE', 'User\'s choice');
 define('_MI_OPENID_CONF_PRIVATE', 'all ID is private');
 define('_MI_OPENID_CONF_OPEN2MEMBER', 'All Id is open to members');
 define('_MI_OPENID_CONF_PUBLIC', 'All ID is public');
+define('_MI_OPENID_SHOW_INPUT', 'Show openID input box');
+define('_MI_OPENID_SHOW_INPUT_DESC', 'Show free input box or not?');
 ?>
