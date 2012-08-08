@@ -58,7 +58,9 @@ function openid_search($queryarray, $andor, $limit, $offset, $userid)
         $ret[$i] = array(
             'image' => 'images/openid_small_logo_white.gif',
             'title' => $record->get4Show('displayid'),
-            'time'  => $record->get('utime')
+            'time'  => $record->get('utime'),
+            'uid' => $userid,
+            'link' => ''
         );
         if ($record->get('omode') == OPENID_IDENTIFIER_INACTIVE) {
             $ret[$i]['title'] .= ' (( inactive ))';

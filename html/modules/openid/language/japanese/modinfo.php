@@ -29,4 +29,6 @@ define('_MI_OPENID_CONF_USERS_CHOICE', 'ユーザーに選択させる');
 define('_MI_OPENID_CONF_PRIVATE', '全て非公開');
 define('_MI_OPENID_CONF_OPEN2MEMBER', '全て登録ユーザーにのみ公開');
 define('_MI_OPENID_CONF_PUBLIC', '全て公開');
+define('_MI_OPENID_SHOW_INPUT', 'OpenID入力ボックスの表示');
+define('_MI_OPENID_SHOW_INPUT_DESC', '任意のClaimed Indentifierを入力するためのテキストボックスを表示させますか？');
 ?>
