@@ -74,6 +74,11 @@ class OpenID_Library
               PAPE_AUTH_MULTI_FACTOR,
               PAPE_AUTH_PHISHING_RESISTANT
         );
+
+        if (@$GLOBALS['xoopsModuleConfig']['override_xml_parser']) {
+            include_once 'ExXML.php';
+            OpenID_ExXML::setXMLParser();
+        }
     }
 
     /**
