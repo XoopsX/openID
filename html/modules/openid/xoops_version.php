@@ -148,6 +148,15 @@ $modversion['config'][] = array(
  'default'  => 1
 );
 
+$modversion['config'][] = array(
+ 'name'     => 'override_xml_parser',
+ 'title'    => '_MI_OPENID_OVERRIDE_XML',
+ 'description'  => '_MI_OPENID_OVERRIDE_XML_DESC',
+ 'formtype' => 'yesno',
+ 'valuetype'    => 'int',
+ 'default'  => 0
+);
+
 $modversion['onUpdate'] = 'include/onupdate.php' ;
 
 // keep block's options
