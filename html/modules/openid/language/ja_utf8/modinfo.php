@@ -31,4 +31,6 @@ define('_MI_OPENID_CONF_OPEN2MEMBER', '全て登録ユーザーにのみ公開')
 define('_MI_OPENID_CONF_PUBLIC', '全て公開');
 define('_MI_OPENID_SHOW_INPUT', 'OpenID入力ボックスの表示');
 define('_MI_OPENID_SHOW_INPUT_DESC', '任意のClaimed Indentifierを入力するためのテキストボックスを表示させますか？');
+define('_MI_OPENID_OVERRIDE_XML', 'XMLパーサーの上書き');
+define('_MI_OPENID_OVERRIDE_XML_DESC', '一部のサーバーでXML処理の不具合によりOpenIDを入力してログインしようとした直後に反応がなくなる事があります。その場合これを有効にすると正常に動作する可能性があります。');
 ?>

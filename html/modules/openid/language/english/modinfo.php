@@ -31,4 +31,6 @@ define('_MI_OPENID_CONF_OPEN2MEMBER', 'All Id is open to members');
 define('_MI_OPENID_CONF_PUBLIC', 'All ID is public');
 define('_MI_OPENID_SHOW_INPUT', 'Show openID input box');
 define('_MI_OPENID_SHOW_INPUT_DESC', 'Show free input box or not?');
+define('_MI_OPENID_OVERRIDE_XML', 'Override XML parser');
+define('_MI_OPENID_OVERRIDE_XML_DESC', 'If the XML-parser error occurs at your server, make this YES.');
 ?>
