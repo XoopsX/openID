@@ -9,6 +9,9 @@ ini_set('mbstring.http_input', 'pass');
 // Save original 'REQUEST_URI'.
 $_SERVER['_REQUEST_URI'] = @ $_SERVER['REQUEST_URI'];
 
+// dieable HypCommon CSRF check function
+define('DISABLE_HYP_CSRF_PROTECTION', true);
+
 require '../../mainfile.php';
 require_once XOOPS_ROOT_PATH . '/modules/openid/class/utils.php';
 
