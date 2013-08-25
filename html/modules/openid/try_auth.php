@@ -81,9 +81,9 @@ do {
 <title>' . _MD_OPENID_MESSAGE_REDIRECT_TITLE . '</title>
 </head>
 <body>' . sprintf(_MD_OPENID_MESSAGE_CONFIRM,
-                htmlspecialchars($xoopsConfig['sitename'], ENT_QUOTES),
-                htmlspecialchars($request->get4show('openid_identifier'), ENT_QUOTES),
-                htmlspecialchars($library->getEndpoint(), ENT_QUOTES)
+                htmlspecialchars($xoopsConfig['sitename'], ENT_QUOTES, _CHARSET),
+                htmlspecialchars($request->get4show('openid_identifier'), ENT_QUOTES, _CHARSET),
+                htmlspecialchars($library->getEndpoint(), ENT_QUOTES, _CHARSET)
             ) . '<br /><br />' . $redirect . '
 <input type="button" value="' . _CANCEL . '" onclick="javascript:history.back()" />
 </body></html>';

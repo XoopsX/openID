@@ -59,7 +59,7 @@ class Openid_Admin_Controller
         } else if (in_array($op, $this->_allowedAction)) {
             $this->$method();
         } else {
-            exit(htmlspecialchars($op, ENT_QUOTES));
+            exit(htmlspecialchars($op, ENT_QUOTES, _CHARSET));
         }
     }
 
@@ -153,7 +153,7 @@ class Openid_Admin_Controller
     function deleteAction()
     {
         if (!empty($_GET[$this->_keyField])) {
-            $key = htmlspecialchars($_GET[$this->_keyField], ENT_QUOTES);
+            $key = htmlspecialchars($_GET[$this->_keyField], ENT_QUOTES, _CHARSET);
             $hiddens = array('op' => 'deleteok', $this->_keyField => $key);
             $message = 'Delete this record.<br />' . $this->_keyField . ' = ' . $key;
             xoops_confirm($hiddens, $this->_url, $message);
@@ -218,7 +218,7 @@ class Openid_Admin_Controller
             $instance = new $className();
             $instance->execute($adminmenu);
         } else {
-            exit(htmlspecialchars($controller, ENT_QUOTES));
+            exit(htmlspecialchars($controller, ENT_QUOTES, _CHARSET));
         }
     }
 }

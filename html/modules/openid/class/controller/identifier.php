@@ -48,7 +48,7 @@ class Openid_Controller_Identifier
                     $this->$method();
                     break;
                 default:
-                    exit(htmlspecialchars($op, ENT_QUOTES));
+                    exit(htmlspecialchars($op, ENT_QUOTES, _CHARSET));
             }
         }
         return OPENID_ACTION_EXECUTED;

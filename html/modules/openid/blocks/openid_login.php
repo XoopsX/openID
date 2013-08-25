@@ -28,7 +28,7 @@ function b_openid_login_show($options)
     $handler_buttons = new Openid_Handler_Buttons();
     $buttons =& $handler_buttons->getObjects();
 
-    $frompage = htmlspecialchars($_SERVER['REQUEST_URI'], ENT_QUOTES);
+    $frompage = htmlspecialchars($_SERVER['REQUEST_URI'], ENT_QUOTES, _CHARSET);
 
     $script = '<script type="text/javascript" src="'.XOOPS_URL.'/modules/openid/resource/openid.js"></script>'."\n";
     $xoopsTpl->assign('xoops_module_header', $script . $xoopsTpl->get_template_vars('xoops_module_header'));

@@ -39,7 +39,7 @@ class Openid_Context
      */
     function get4Show($key)
     {
-        return htmlspecialchars($this->get($key), ENT_QUOTES);
+        return htmlspecialchars($this->get($key), ENT_QUOTES, _CHARSET);
     }
 
     /**
