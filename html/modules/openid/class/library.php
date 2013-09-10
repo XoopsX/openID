@@ -93,10 +93,11 @@ class OpenID_Library
         require_once 'xoopsDBconnection.php';
         require_once 'ExMySQLStore.php';
 
-        $connection = new OpenID_XoopsDBconnection($GLOBALS['xoopsDB']);
+        $db = XoopsDatabaseFactory::getDatabaseConnection();
+        $connection = new OpenID_XoopsDBconnection($db);
         $store = new OpenID_ExMySQLStore($connection,
-                                $GLOBALS['xoopsDB']->prefix('openid_assoc'),
-                                $GLOBALS['xoopsDB']->prefix('openid_nonce')
+                                $db->prefix('openid_assoc'),
+                                $db->prefix('openid_nonce')
                                 );
         return $store;
     }

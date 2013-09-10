@@ -26,9 +26,14 @@ class Openid_Context
      */
     function get4Sql($key)
     {
-        $value = $this->get($key);
+        static $db = null;
+    	$value = $this->get($key);
         if (!is_int($value)) {
-            $value = mysql_real_escape_string($value);
+            if (is_null($db)) {
+                $db = XoopsDatabaseFactory::getDatabaseConnection();
+            }
+            $value = $db->quoteString($value);
+            $value = trim($value, $value[0]);
         }
         return $value;
     }

@@ -125,7 +125,7 @@ class OpenID_XoopsDBconnection extends Auth_OpenID_DatabaseConnection
                 case '?':
                     $param = $params[$i++];
                     if (!is_int($param)) {
-                        $param = "'" . mysql_real_escape_string($param) . "'";
+                        $param = $this->_db->quoteString($param);
                     }
                     $preparedQuery .= $param;
                     break;
