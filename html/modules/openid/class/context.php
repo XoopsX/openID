@@ -33,7 +33,7 @@ class Openid_Context
                 $db = XoopsDatabaseFactory::getDatabaseConnection();
             }
             $value = $db->quoteString($value);
-            $value = trim($value, $value[0]);
+            $value = substr($value, 1, strlen($value)-2);
         }
         return $value;
     }
