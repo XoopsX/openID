@@ -10,6 +10,7 @@
  */
 $modversion['name'] = _MI_OPENID_NAME;
 $modversion['version'] = 0.33;
+$modversion['detailed_version'] = "0.33.1" ;
 $modversion['description'] = _MI_OPENID_DESC;
 $modversion['credits'] = '"OpenID Auth Module" Development Committee<br />
 Original author Nat Sakimura( http://www.sakimura.org/ )<br />';
