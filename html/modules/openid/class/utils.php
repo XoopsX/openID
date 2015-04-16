@@ -6,7 +6,7 @@
  */
 class OpenID_Utils
 {
-    function redirect($message, $toFrompage = false)
+    public static function redirect($message, $toFrompage = false)
     {
         if ($toFrompage) {
             $url = XOOPS_URL . '/';
@@ -35,7 +35,7 @@ class OpenID_Utils
         redirect_header($url, 2, $message);
     }
 
-    function &load($name)
+    public static function &load($name)
     {
         if (file_exists($hnd_file = XOOPS_ROOT_PATH . "/modules/openid/class/handler/{$name}.php")) {
             include_once $hnd_file;
@@ -48,13 +48,13 @@ class OpenID_Utils
         return $instance;
     }
 
-    function reset()
+    public static function reset()
     {
         unset($_SESSION['openid_response']);
         setcookie('openid_frompage', '', time() - 3600);
     }
 
-    function loadEncoder()
+    public static function loadEncoder()
 	{
         global $xoopsConfig;
         $fileName  = XOOPS_ROOT_PATH . '/modules/openid/language/';
@@ -66,7 +66,7 @@ class OpenID_Utils
         }
     }
 
-    function validateToken()
+    public static function validateToken()
     {
         global $xoopsSecurity;
         if (class_exists('XoopsMultiTokenHandler')) {
